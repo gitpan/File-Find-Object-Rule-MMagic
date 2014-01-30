@@ -4,11 +4,13 @@ package File::Find::Object::Rule::MMagic;
 use strict;
 use warnings;
 
+use 5.008;
+
 use File::Find::Object::Rule;
 use base qw( File::Find::Object::Rule );
 use vars qw( $VERSION @EXPORT );
 @EXPORT  = @File::Find::Object::Rule::EXPORT;
-$VERSION = '0.0.2';
+$VERSION = '0.0.3';
 
 use File::MMagic;
 use Text::Glob qw(glob_to_regex);
@@ -20,9 +22,9 @@ sub File::Find::Object::Rule::magic {
     $self->exec( sub {
                      my (undef, undef, $path) = @_;
                      my $type = $mm->checktype_filename($path);
-                     for my $pat (@patterns) 
-                     { 
-                         return 1 if $type =~ m/$pat/ 
+                     for my $pat (@patterns)
+                     {
+                         return 1 if $type =~ m/$pat/
                      }
                      return;
                  } );
@@ -42,9 +44,9 @@ File::Find::Object::Rule::MMagic - rule to match on mime types
 
 =head1 DESCRIPTION
 
-File::Find::Object::Rule::MMagic interfaces L<File::MMagic> to 
-L<File::Find::Object::Rule> enabling you to find files based upon their mime 
-type.  L<Text::Glob> is used so that the pattern may be a simple globbing 
+File::Find::Object::Rule::MMagic interfaces L<File::MMagic> to
+L<File::Find::Object::Rule> enabling you to find files based upon their mime
+type.  L<Text::Glob> is used so that the pattern may be a simple globbing
 pattern.
 
 =head2 ->magic( @patterns )
