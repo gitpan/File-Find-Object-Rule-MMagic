@@ -43,7 +43,8 @@
             "File::Find::Object::Rule" : "0",
             "File::MMagic" : "0",
             "Text::Glob" : "0",
-            "perl" : "0",
+            "parent" : "0",
+            "perl" : "5.008",
             "strict" : "0",
             "vars" : "0",
             "warnings" : "0"
@@ -53,7 +54,7 @@
    "provides" : {
       "File::Find::Object::Rule::MMagic" : {
          "file" : "lib/File/Find/Object/Rule/MMagic.pm",
-         "version" : "v0.0.3"
+         "version" : "v0.0.4"
       }
    },
    "release_status" : "stable",
@@ -66,5 +67,5 @@
          "url" : "http://svn.berlios.de/svnroot/repos/web-cpan/File-Find-Object/"
       }
    },
-   "version" : "v0.0.3"
+   "version" : "v0.0.4"
 }
